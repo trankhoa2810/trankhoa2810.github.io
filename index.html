@@ -1,22 +1,185 @@
-<html>
-    <head>
-        <title>Introduce_Myself</title>
-    </head>
-    <body>
-        <img src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/83916697_787662128405723_6201177028683628544_o.jpg?_nc_cat=108&_nc_sid=09cbfe&_nc_ohc=M_RA1NrEFMIAX-0NlHM&_nc_ht=scontent.fdad2-1.fna&oh=d199871e543f1aa12e27688c938e660a&oe=5F7BCA32"  width="500" height="500" alt="Photo">
-        <h3>Tran Anh Khoa (Mr.)
-            <br><br>
-            Student at Can Tho University, Campus II, 3/2 street, Ninh Kieu
-            district, Can Tho city, Vietnam.
-            <br><br>
-            College of Information Technology, Department of Information Technology
-            <br><br>
-            Major: Computer Science
-            <br><br>
-            Phone number: (+84) 845 003 151
-            <br><br>
-            Email: khoab1913240@student.ctu.edu.vn
-            <br><br>
-            <a href="https://www.facebook.com/profile.php?id=100014858294552">Link Facebook Cá Nhân</a>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">		
+		<title>BÀI TẬP NHẬP MÔN LẬP TRÌNH WEB : B1913240</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	</head>
+	<body style="background-image:url('https://i.imgur.com/PNZngOc.jpg'); background-size: cover">; 	
+		<div class="container" style="margin-top: 50px; margin-bottom: 50px;">					
+
+			<div class="col-md-12">
+				<h4>
+                    <div style="color:aliceblue">Bạn muốn? </div>
+                </h4>
+				<button id="_b1" style="margin-top: 10px;" class="btn btn-danger" type="button">Tính diện tích và chu vi tam giác</button>
+				<button id="_b2" style="margin-top: 10px;" class="btn btn-warning" type="button">Tính A^B</button>
+				<button id="_b3" style="margin-top: 10px;" class="btn btn-success" type="button">Tính N!</button>
+			</div>
+
+			<div id="panelTriangle" style="display: none; margin-top: 10px;" class="col-md-12">
+				<h4>
+                    <div style="color:aliceblue">Tam giác: </div>
+                </h4>			
+				<div class="row">
+					<div class="col-md-12">
+						<label>
+                            <div style="color:aliceblue">Nhập cạnh A:</div>
+							<input id="_a" class="form-control" type="number" name="" value="">
+						</label>					
+					</div>
+					<div class="col-md-12">
+						<label>
+                            <div style="color:aliceblue">Nhập cạnh B:</div>
+							<input id="_b" class="form-control" type="number" name="" value="">
+						</label>					
+					</div>
+					<div class="col-md-12">
+						<label>
+                            <div style="color:aliceblue">Nhập cạnh C:</div>
+							<input id="_c" class="form-control" type="number" name="" value="">
+						</label>					
+					</div>
+				</div>
+                <button id="getInfoTriangle" class="btn btn-danger" type="button">Xem thông tin</button>
+                <div style="color:aliceblue">
+                    <p id="typeTriangle" style="display: none;">Tam giác: ? . ?</p>
+                    <p id="sTriangle" style="display: none;">Diện tích: ? . ?</p>
+                    <p id="pTriangle" style="display: none;">Chu vi: ? . ?</p>
+                </div>
+			</div>
+			<div id="panelFac" style="display: none; margin-top: 10px;" class="col-md-12">
+				<h4>
+                    <div style="color:aliceblue">Luỹ thừa: A mũ B</div>
+                </h4>			
+				<div class="row">
+					<div class="col-md-12">
+						<label>
+							<div style="color:aliceblue">Nhập A:</div>
+							<input id="_base" class="form-control" type="number" name="" value="">
+						</label>					
+						<label>
+                            <div style="color:aliceblue">Nhập B:</div>
+							<input id="_exp" class="form-control" type="number" name="" value="">
+						</label>	
+					</div>				
+				</div>
+				<button id="calcPow" class="btn btn-warning" type="button">Tính A^B</button>
+				<textarea disabled="true" class="form-control" style="margin-top: 10px;" rows="5" id="ansPow" style="display: block;">Kết quả: NULL</textarea>							
+			</div>
+			<div id="panelPow" style="margin-top: 10px; display: none;" class="col-md-12">
+				<h4>
+                    <div style="color:aliceblue">Giai thừa: N!</div>
+                </h4>			
+				<div class="row">
+					<div class="col-md-12">
+						<label>
+                            <div style="color:aliceblue">Nhập N:</div>
+							<input id="_gt" class="form-control" type="number" name="" value="">
+						</label>					
+					</div>				
+				</div>
+				<button id="calcFactorial" class="btn btn-success" type="button">Tính N!</button>
+				<textarea disabled="true" class="form-control" style="margin-top: 10px;" rows="5" id="ansFactorial" style="display: block;">Kết quả: NULL</textarea>							
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+		<script type="text/javascript">
+
+			function resetPanel() {
+				$('#panelPow').css("display", "none");
+				$('#panelTriangle').css("display", "none");
+				$('#panelFac').css("display", "none");
+				$('#panelMatrix').css("display", "none");
+			}
+
+			$('#_b1').click(() => {
+				resetPanel();			
+				$('#panelTriangle').css("display", "block");
+			});
+
+			$('#_b2').click(() => {
+				resetPanel();			
+				$('#panelFac').css("display", "block");
+			});
+
+			$('#_b3').click(() => {
+				resetPanel();			
+				$('#panelPow').css("display", "block");
+			});
+
+			$('#calcPow').click(() => {
+				var A = ($('#_base').val());
+				var B = ($('#_exp').val());
+				if(A == 0 || B == 0) {
+					$('#ansPow').html(`Vui lòng nhập đầy đủ thông tin.`);
+				} else {
+					A = parseInt(A);
+					B = parseInt(B);
+					var Result = BigInt(1);
+					for(var i = 1n; i <= B; i++) {
+						Result *= BigInt(A);
+					}
+					$('#ansPow').html(`Kết quả: ${Result}`);
+				}
+			});
+
+			$('#calcFactorial').click(() => {
+				var N = ($('#_gt').val());
+				if(N == 0) {
+					$('#ansFactorial').html(alert("Vui lòng nhập N"));
+				} else {
+					N = parseInt(N);
+					var Result = BigInt(1);
+					for(var i = 1n; i <= N; i++) {
+						Result *= i;
+					}
+					$('#ansFactorial').html(`Kết quả: ${Result}`);
+				}
+			});
+
+			$('#getInfoTriangle').click(() => {
+				var A = parseInt($('#_a').val());
+				var B = parseInt($('#_b').val());
+				var C = parseInt($('#_c').val());
+				if(A == 0 || B == 0 || C == 0) {
+					$('#typeTriangle').html(alert("Vui lòng nhập đầy đủ thông tin"));
+					$('#typeTriangle').css("display", "block");
+				} else {
+					console.log("Da nhap vao: " + A + " " + B + " " + C);
+					if(A + B > C && A + C > B && B + C > A) {										
+						var typeTriangle = "vuông";
+						if(A == B && B == C) {
+							typeTriangle = "đều";
+						} else if(A*A + B*B == C*C || B*B + C*C == A*A || A*A + C*C == B*B) {
+								if(A == B || B == C) {
+									typeTriangle = "vuông cân";
+								} else {
+									typeTriangle = "vuông";		
+								}
+						} else if(A == B || A == C || B == C) {
+							typeTriangle = "cân";
+						} else {
+							typeTriangle = "thường";
+						}
+						$('#typeTriangle').html(`Tam giác: ${typeTriangle}`);
+						$('#typeTriangle').css("display", "block");
+						var P = (A + B + C) / 2;
+						$('#sTriangle').html(`Diện tích tam giác: ${Math.sqrt(P* (P - A) * (P - B) * (P - C))}`);
+						$('#sTriangle').css("display", "block");
+						$('#pTriangle').html(`Chu vi tam giác: ${(A + B + C)}`);
+						$('#pTriangle').css("display", "block");
+					} else {
+						$('#typeTriangle').html(`Không là tam giác`);
+						$('#typeTriangle').css("display", "block");
+					}
+				}
+			});
+		</script>
+	</body>
 </html>
