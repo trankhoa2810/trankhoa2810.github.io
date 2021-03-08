@@ -1,185 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="">		
-		<title>BÀI TẬP NHẬP MÔN LẬP TRÌNH WEB : B1913240</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	</head>
-	<body style="background-image:url('https://i.imgur.com/PNZngOc.jpg'); background-size: cover">; 	
-		<div class="container" style="margin-top: 50px; margin-bottom: 50px;">					
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="icon" type="image/png" href="image/favicon.ico">
+		<title>Quốc tế phụ nữ</title>    
+        <link type="text/css" rel="stylesheet" href="./renxi/default.css">
+		<script type="text/javascript" src="./renxi/jquery.min.js"></script>
+		<script type="text/javascript" src="./renxi/jscex.min.js"></script>
+		<script type="text/javascript" src="./renxi/jscex-parser.js"></script>
+		<script type="text/javascript" src="./renxi/jscex-jit.js"></script>
+		<script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
+		<script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
+		<script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
+		<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
 
-			<div class="col-md-12">
-				<h4>
-                    <div style="color:aliceblue">Bạn muốn? </div>
-                </h4>
-				<button id="_b1" style="margin-top: 10px;" class="btn btn-danger" type="button">Tính diện tích và chu vi tam giác</button>
-				<button id="_b2" style="margin-top: 10px;" class="btn btn-warning" type="button">Tính A^B</button>
-				<button id="_b3" style="margin-top: 10px;" class="btn btn-success" type="button">Tính N!</button>
-			</div>
+ <!-- <script>
+window.onload = function() {
+  var context = new AudioContext();
+}
+</script> -->
 
-			<div id="panelTriangle" style="display: none; margin-top: 10px;" class="col-md-12">
-				<h4>
-                    <div style="color:aliceblue">Tam giác: </div>
-                </h4>			
-				<div class="row">
-					<div class="col-md-12">
-						<label>
-                            <div style="color:aliceblue">Nhập cạnh A:</div>
-							<input id="_a" class="form-control" type="number" name="" value="">
-						</label>					
-					</div>
-					<div class="col-md-12">
-						<label>
-                            <div style="color:aliceblue">Nhập cạnh B:</div>
-							<input id="_b" class="form-control" type="number" name="" value="">
-						</label>					
-					</div>
-					<div class="col-md-12">
-						<label>
-                            <div style="color:aliceblue">Nhập cạnh C:</div>
-							<input id="_c" class="form-control" type="number" name="" value="">
-						</label>					
-					</div>
-				</div>
-                <button id="getInfoTriangle" class="btn btn-danger" type="button">Xem thông tin</button>
-                <div style="color:aliceblue">
-                    <p id="typeTriangle" style="display: none;">Tam giác: ? . ?</p>
-                    <p id="sTriangle" style="display: none;">Diện tích: ? . ?</p>
-                    <p id="pTriangle" style="display: none;">Chu vi: ? . ?</p>
+</head>
+    <body>
+ 
+			<audio autoplay="autoplay" >
+					<source src="music/nhac.mp3" type="audio/mp3" />
+            </audio> 
+
+          
+
+        <div id="main">
+            <div id="error"> (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
+             <div id="wrap">
+                <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
+			        <div id="code">
+			      <font color="#0000FF" ><span class="say">Dear Pham Thu Huyen</span><br>
+						<span class="say"> </span><br>
+						<span class="say">For all the times you’ve brought a smile and made my days seem brighter. For sharing ups and downs with me and making my burdens lighter. For doing the caring things that make a special friend. Your friendship is a joy. I wish it never ends! Happy Women’s Day!</span><br>
+                        <span class="say"><span class="space"><img src="image/tym.png" alt=""><br>
+                        <span class="say"><span class="space"></span> --Tran Anh Khoa--</span>
+			  </font></p>
+      </div>
                 </div>
-			</div>
-			<div id="panelFac" style="display: none; margin-top: 10px;" class="col-md-12">
-				<h4>
-                    <div style="color:aliceblue">Luỹ thừa: A mũ B</div>
-                </h4>			
-				<div class="row">
-					<div class="col-md-12">
-						<label>
-							<div style="color:aliceblue">Nhập A:</div>
-							<input id="_base" class="form-control" type="number" name="" value="">
-						</label>					
-						<label>
-                            <div style="color:aliceblue">Nhập B:</div>
-							<input id="_exp" class="form-control" type="number" name="" value="">
-						</label>	
-					</div>				
-				</div>
-				<button id="calcPow" class="btn btn-warning" type="button">Tính A^B</button>
-				<textarea disabled="true" class="form-control" style="margin-top: 10px;" rows="5" id="ansPow" style="display: block;">Kết quả: NULL</textarea>							
-			</div>
-			<div id="panelPow" style="margin-top: 10px; display: none;" class="col-md-12">
-				<h4>
-                    <div style="color:aliceblue">Giai thừa: N!</div>
-                </h4>			
-				<div class="row">
-					<div class="col-md-12">
-						<label>
-                            <div style="color:aliceblue">Nhập N:</div>
-							<input id="_gt" class="form-control" type="number" name="" value="">
-						</label>					
-					</div>				
-				</div>
-				<button id="calcFactorial" class="btn btn-success" type="button">Tính N!</button>
-				<textarea disabled="true" class="form-control" style="margin-top: 10px;" rows="5" id="ansFactorial" style="display: block;">Kết quả: NULL</textarea>							
-			</div>
-		</div>
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
-		<script type="text/javascript">
+                <div id="clock-box">
+                    <span class="STYLE1"></span><font color="#FF0000">First Metting....</font>
+<!-- <span class="STYLE1"> Time of love...</span> -->
+                  <div id="clock"></div>
+              </div>
+                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
+            
+        </div>
+    
+    <script>
+    </script>
 
-			function resetPanel() {
-				$('#panelPow').css("display", "none");
-				$('#panelTriangle').css("display", "none");
-				$('#panelFac').css("display", "none");
-				$('#panelMatrix').css("display", "none");
-			}
+    <script>
+    (function(){
+        var canvas = $('#canvas');
+		
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;        }
 
-			$('#_b1').click(() => {
-				resetPanel();			
-				$('#panelTriangle').css("display", "block");
-			});
+        var width = canvas.width();
+        var height = canvas.height();        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
 
-			$('#_b2').click(() => {
-				resetPanel();			
-				$('#panelFac').css("display", "block");
-			});
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
 
-			$('#_b3').click(() => {
-				resetPanel();			
-				$('#panelPow').css("display", "block");
-			});
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
 
-			$('#calcPow').click(() => {
-				var A = ($('#_base').val());
-				var B = ($('#_exp').val());
-				if(A == 0 || B == 0) {
-					$('#ansPow').html(`Vui lòng nhập đầy đủ thông tin.`);
-				} else {
-					A = parseInt(A);
-					B = parseInt(B);
-					var Result = BigInt(1);
-					for(var i = 1n; i <= B; i++) {
-						Result *= BigInt(A);
-					}
-					$('#ansPow').html(`Kết quả: ${Result}`);
-				}
-			});
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
 
-			$('#calcFactorial').click(() => {
-				var N = ($('#_gt').val());
-				if(N == 0) {
-					$('#ansFactorial').html(alert("Vui lòng nhập N"));
-				} else {
-					N = parseInt(N);
-					var Result = BigInt(1);
-					for(var i = 1n; i <= N; i++) {
-						Result *= i;
-					}
-					$('#ansFactorial').html(`Kết quả: ${Result}`);
-				}
-			});
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
 
-			$('#getInfoTriangle').click(() => {
-				var A = parseInt($('#_a').val());
-				var B = parseInt($('#_b').val());
-				var C = parseInt($('#_c').val());
-				if(A == 0 || B == 0 || C == 0) {
-					$('#typeTriangle').html(alert("Vui lòng nhập đầy đủ thông tin"));
-					$('#typeTriangle').css("display", "block");
-				} else {
-					console.log("Da nhap vao: " + A + " " + B + " " + C);
-					if(A + B > C && A + C > B && B + C > A) {										
-						var typeTriangle = "vuông";
-						if(A == B && B == C) {
-							typeTriangle = "đều";
-						} else if(A*A + B*B == C*C || B*B + C*C == A*A || A*A + C*C == B*B) {
-								if(A == B || B == C) {
-									typeTriangle = "vuông cân";
-								} else {
-									typeTriangle = "vuông";		
-								}
-						} else if(A == B || A == C || B == C) {
-							typeTriangle = "cân";
-						} else {
-							typeTriangle = "thường";
-						}
-						$('#typeTriangle').html(`Tam giác: ${typeTriangle}`);
-						$('#typeTriangle').css("display", "block");
-						var P = (A + B + C) / 2;
-						$('#sTriangle').html(`Diện tích tam giác: ${Math.sqrt(P* (P - A) * (P - B) * (P - C))}`);
-						$('#sTriangle').css("display", "block");
-						$('#pTriangle').html(`Chu vi tam giác: ${(A + B + C)}`);
-						$('#pTriangle').css("display", "block");
-					} else {
-						$('#typeTriangle').html(`Không là tam giác`);
-						$('#typeTriangle').css("display", "block");
-					}
-				}
-			});
-		</script>
-	</body>
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2021,1 , 13); 			
+		    together.setHours(0);							
+		    together.setMinutes(0);				
+		    together.setSeconds(0);					
+            together.setMilliseconds(0);
+            
+           
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+    </script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
 </html>
